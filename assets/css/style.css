@@ -1,16 +1,19 @@
 html, body {
     height: 100%; 
+    
 
 }
 
 body {
-    display: flex;
     flex-direction: column;
+    justify-content: flex-end;
 }
+
 .logo {
     text-align: center;
     text-decoration-line: underline;
     text-shadow: 5px;
+    
 
 }
 .header {
@@ -19,18 +22,19 @@ body {
 }
 .scores {
     text-align: right;
+    top: 20px;
+    right: 20px;
+    position: absolute;
+    top: 100px;
 }
 
-.choices {
+.choices, .controls {
     text-align: center;
-}
-
-.controls {
-    text-align: center;
+    margin: 10px 0;
 }
 
 .container {
-    background-color: bisque;
+    
 }
 
 footer {
@@ -39,4 +43,7 @@ footer {
     bottom:0;
     left:0;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
