@@ -1,9 +1,42 @@
+html, body {
+    height: 100%; 
+
+}
+
 body {
-    
+    display: flex;
+    flex-direction: column;
+}
+.logo {
+    text-align: center;
+    text-decoration-line: underline;
+    text-shadow: 5px;
+
+}
+.header {
+    padding-top: 30px;
+    text-align: left;
+}
+.scores {
+    text-align: right;
+}
+
+.choices {
+    text-align: center;
+}
+
+.controls {
+    text-align: center;
+}
+
+.container {
+    background-color: bisque;
 }
 
 footer {
-    position:fixed;
+    position: relative;
+    padding: 20px 0;
     bottom:0;
     left:0;
+    width: 100%;
 }
