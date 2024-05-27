@@ -21,8 +21,8 @@
 
     <!-- header -->
 <div class="header">
-    <button>Instructions</button>
-    <button>Reset Scores</button>
+    <button id="how">Instructions</button>
+    <button id="reset" onclick="resetgame()">Reset Scores</button>
 </div>
 
  
@@ -30,26 +30,26 @@
     <!-- Saved Scores -->
 <div class="scores">
     <p>Scores</p>
-    <p>Player: 5 </p>
-    <p>Computer: 3 </p>
+    <p id="playerScore">Player:  </p>
+    <p id="computerScore">Computer: </p>
 </div>
 
-<div class="container">
+<div>
     <div>
         <!-- Score Text -->
         <div class="choices">
-            <h2 class="player-choice">Player: Rock!!</h2>
-            <h2 class="computer-choice">Computer: Scissor!! </h2>
-            <h2 class="result">Results:  YOU WIN!! </h2>
+            <h2 id="playerChoice">Player: </h2>
+            <h2 id="computerChoice">Computer: </h2>
+            <h2 id="endResult">Results: </h2>
         </div>
 
 
         <!-- Control Buttons -->
         <div class="controls">
             <h2>Choose an option</h2>
-            <button> 🗿 Rock</button>
-            <button>📜 Paper</button>
-            <button> ✂ Scissor</button>
+            <button class="choiceBtn"> 🗿 Rock</button>
+            <button class="choiceBtn">📜 Paper</button>
+            <button class="choiceBtn"> ✂ Scissor</button>
         </div>
     </div>
 
@@ -57,7 +57,7 @@
 
     <!-- Footer -->
 <footer>
-    <p>@Copyright,2024. All Rights Reserved</p>
+    <p>&copy; 2024. All Rights Reserved</p>
 </footer>
 
 
