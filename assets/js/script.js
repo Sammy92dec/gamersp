@@ -4,8 +4,8 @@ const endResult = document.querySelector("#endResult");
 const choiceBtns = document.querySelectorAll(".choiceBtn");
 const resetBtn = document.querySelector("#reset");
 const scoreDisplay = document.querySelector("#score");
-const playerScoreDisplay = document.querySelector("#playerChoice");
-const computerScoreDisplay = document.querySelector("#computerChoice");
+const playerScoreDisplay = document.querySelector("#playerScore");
+const computerScoreDisplay = document.querySelector("#computerScore");
 
 
 
@@ -16,7 +16,7 @@ let playerScore = 0;
 let computerScore = 0;
 let roundCount = 0;
 
-// Display when players play
+// Listeners for choices
 choiceBtns.forEach(button => button.addEventListener("click", () => {
   if (roundCount >= 10) {
     endResult.textContent = "Game over. Please reset the scores to play again.";
@@ -47,31 +47,38 @@ function computerTurn(){
   const randNum = Math.floor(Math.random() * 3);
   switch(randNum){
     case 0:
-      computer = "ROCK";
-      break;
+        computer = "ROCK";
+        break;
     case 1:
-      computer = "PAPER";
-      break;
+        computer = "PAPER";
+        break;
     case 2:
-      computer = "SCISSORS";
-      break;
+        computer = "SCISSORS";
+        break;
   }
 }
 
 
   // Checking winner
 function checkWinner() {
-  if (player === computer) {
-      return "Draw!";
-  } else if (computer === "ROCK") {
-      return (player === "PAPER") ? "You Win!" : "You Lose!";
-  } else if (computer === "PAPER") {
-      return (player === "SCISSORS") ? "You Win!" : "You Lose!";
-  } else if (computer === "SCISSORS") {
-      return (player === "ROCK") ? "You Win!" : "You Lose!";
+    if (player === computer) {
+        return "Draw!";
+      } else if ((player === "ROCK" && computer === "SCISSORS") 
+                (player === "PAPER" && computer === "ROCK")
+                (player === "SCISSORS" && computer === "PAPER")) {
+        return "You Win!";
+    } else {
+        return "You Lose!";
+    }
+}
+ 
+function updateScore(result) {
+  if (result === "You Win!") {
+      playerScore++;
+  } else if (result === "You Lose!") {
+      computerScore++;
   }
 }
-  
 
 // Reset
 function resetGame() {
